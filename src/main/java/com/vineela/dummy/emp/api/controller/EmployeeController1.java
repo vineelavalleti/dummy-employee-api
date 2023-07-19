@@ -22,7 +22,7 @@ public class EmployeeController1 {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	String insertEmpSql = "INSERT into Employee(empid, empname, empsal, empage) values(?,?,?,?) ";
-	
+	String insertEmpSql_hardCodedVal = "INSERT into Employee(empid, empname, empsal, empage) values(10,'Vineela',1000,32) ";
 	@PostMapping("/employee")
 	public Employee createEmployee(@RequestBody Employee emp) {
 		jdbcTemplate.update(insertEmpSql,emp.getEmpid(), emp.getEmpname(),
